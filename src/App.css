@@ -7,14 +7,15 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-.container {
+.formContainer {
   display: flex;
   flex-flow: column wrap;
+  align-items: center;
 
 }
 
@@ -50,11 +51,20 @@ body {
 }
 
 .card-list-style {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+
   img {
     height: 300px;
   }
 
-  list-style: none;
+  ul {
+    margin: 10;
+    padding: 0;
+    list-style: none;
+  }
 }
 
 

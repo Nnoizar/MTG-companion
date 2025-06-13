@@ -4,6 +4,25 @@
   padding: 2rem;
 }
 
+@media (max-width: 785px) {
+  .form-container {
+    flex-direction: column;
+    align-items: stretch;
+
+  }
+
+  .add-card-form input {
+    width: 100%;
+    margin-bottom: 5px;
+
+  }
+
+  .add-card-button {
+    width: 100%;
+    margin: 5px 10px 5px 20px;
+  }
+}
+
 body {
   margin: 0;
   display: flex;
@@ -12,10 +31,18 @@ body {
   min-height: 100vh;
 }
 
-.formContainer {
+.container {
   display: flex;
+  justify-content: center;
   flex-flow: column wrap;
-  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-flow: column wrap;
+  margin-bottom: 1rem;
 
 }
 
@@ -30,8 +57,8 @@ body {
   height: 40px;
   border-radius: 8px;
   border-style: none;
-  margin: 0px 10px 0px 10px;
   padding-left: 10px;
+
 }
 
 .add-card-button {
@@ -41,9 +68,11 @@ body {
   height: 42px;
   border-radius: 8px;
   padding: 0.6em 1.2em;
+  margin-left: 10px;
   font-size: 1em;
   font-weight: 500;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .add-card-button:hover {
@@ -57,59 +86,76 @@ body {
   align-items: center;
 
 
+
   img {
     height: 300px;
+    border-radius: 10px;
   }
 
-  ul {
-    margin: 10;
-    padding: 0;
-    list-style: none;
-  }
+}
+
+ul {
+  margin: 10;
+  padding: 0;
+  list-style: none;
 }
 
 
+
+.card-container {
+  display: flex;
+  flex-flow: column wrap;
+  background: #222;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #555;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.reset-deck {
+  background-color: red;
+  height: 30px;
+  margin-bottom: 5px;
+  border-style: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+
+}
+
+.reset-deck:hover {
+  background-color: #4d4d4d;
+  ;
+  color: rgb(255, 255, 255);
+
+}
+
+.card-action-button {
+  height: 30px;
+  margin-bottom: 5px;
+  border-style: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.card-action-button:hover {
+  background-color: #4d4d4d;
+  ;
+  color: rgb(255, 255, 255);
+
+}
 
 input:focus,
 input:focus-visible {
   outline: 0px auto -webkit-focus-ring-color;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #d5d5d5;
 }

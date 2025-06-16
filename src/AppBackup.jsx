@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css'
-import SearchResultCard from "./SearchResultCard"
 
 
 export default function App() {
@@ -98,19 +97,18 @@ export default function App() {
   //=====================================================
   //  itterating through array and displaying image/ or error details
   //=====================================================
-  const cardsListEl = [...search].reverse().map(card =>
-    card.object === "card"
-      ? (
-        <SearchResultCard
-          key={card.id}
-          card={card}
-          onAdd={handleCard}
-          onRemove={removeCardFromSearch}
-        />
-      )
-      : <li key={card.status}>{card.details}</li>
-  )
+  const cardsListEl = [...search].reverse().map((arrRef) => {
+    return arrRef.object === "card" ?
+      <div className="card-container" key={arrRef.id}>
+        <li>
+          <img src={arrRef.image_uris.normal} />
+        </li>
+        <button className="card-action-button" onClick={() => handleCard(arrRef)}>Add card to deck</button>
+        <button className="card-action-button" onClick={() => removeCardFromSearch(arrRef)}>Remove from search</button>
 
+      </div> :
+      <li key={arrRef.status}>{arrRef.details}</li>
+  })
   const errorList = fail.map(function (arrRef) {
     return <li key={arrRef.object}>{arrRef.details}</li>
   })
